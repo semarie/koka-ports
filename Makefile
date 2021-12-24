@@ -22,7 +22,6 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c ffi gmp iconv m pthread util
 
-# XXX
 USE_WXNEEDED =	Yes
 
 LIB_DEPENDS +=		converters/libiconv \
