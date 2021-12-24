@@ -5,7 +5,7 @@ $OpenBSD$
 Index: kklib/src/os.c
 --- kklib/src/os.c.orig
 +++ kklib/src/os.c
-@@ -303,9 +303,9 @@ kk_decl_export int kk_os_ensure_dir(kk_string_t path, 
+@@ -303,7 +303,7 @@ kk_decl_export int kk_os_ensure_dir(kk_string_t path, 
        // if not, create each part of the path
        do {
          char c = (char)(*p);
@@ -14,9 +14,7 @@ Index: kklib/src/os.c
            *p = 0;
            if (!kk_is_dir(cpath)) {
              #if defined(WIN32)
-             int res = _wmkdir(cpath);
-             #else 
-@@ -990,7 +991,7 @@ kk_string_t kk_os_app_path(kk_context_t* ctx) {
+@@ -990,7 +990,7 @@ kk_string_t kk_os_app_path(kk_context_t* ctx) {
  }
  
  #else
@@ -25,10 +23,3 @@ Index: kklib/src/os.c
  #pragma message("using generic application path detection")
  #endif
  kk_string_t kk_os_app_path(kk_context_t* ctx) {
-@@ -1245,4 +1246,4 @@ bool kk_cpu_is_little_endian(kk_context_t* ctx) {
-   #else
-   return false;
-   #endif
--}
-\ No newline at end of file
-+}
