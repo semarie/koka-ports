@@ -81,6 +81,9 @@ post-extract:
 	test -d ${WRKSRC}/kklib/mimalloc && rmdir ${WRKSRC}/kklib/mimalloc
 	mv ${WRKDIR}/mimalloc-${MIMALLOC_CID} \
 		${WRKSRC}/kklib/mimalloc
+	cd ${WRKSRC}/kklib && rm -rf -- \
+		mimalloc/{bin,cmake,doc,docs,ide,test} \
+		mimalloc/{azure-pipelines.yml,CMakeLists.txt}
 
 # build the compiler (koka) and bundle tool
 do-build:
