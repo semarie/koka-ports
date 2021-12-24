@@ -1,0 +1,20 @@
+$OpenBSD$
+Use install path instead of wrongly guess executable path.
+
+Index: src/Common/File.hs
+--- src/Common/File.hs.orig
++++ src/Common/File.hs
+@@ -337,7 +337,12 @@ removeFileIfExists fname 
+               (\exn -> return ())
+ 
+ getProgramPath :: IO FilePath
+-getProgramPath = getExecutablePath
++getProgramPath = do
++  executablePath <- getExecutablePath
++  if executablePath == "koka" then
++    return "${PREFIX}/bin/koka"
++  else
++    return executablePath
+ 
+ commonPathPrefix :: FilePath -> FilePath -> FilePath
+ commonPathPrefix s1 s2

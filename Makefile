@@ -85,6 +85,9 @@ post-extract:
 		mimalloc/{bin,cmake,doc,docs,ide,test} \
 		mimalloc/{azure-pipelines.yml,CMakeLists.txt}
 
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/src/Common/File.hs
+
 # build the compiler (koka) and bundle tool
 do-build:
 #	build koka
