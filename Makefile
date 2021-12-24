@@ -87,9 +87,9 @@ do-build:
 #	build koka
 	${_MODCABAL_BUILD_TARGET}
 #	run koka, to build util_bundle
-	cd ${WRKBUILD} && ${_MODCABAL_CABAL} v2-run --offline \
-		--disable-benchmarks --disable-tests \
-		exe:koka -- util/bundle.kk -o ${WRKBUILD}/util_bundle
+	cd ${WRKBUILD} && \
+		${SETENV} ${MAKE_ENV} ${MODCABAL_BUILT_EXECUTABLE_koka} \
+			${WRKSRC}/util/bundle.kk -o ${WRKBUILD}/util_bundle
 
 # prebuild koka libraries and install them
 do-install:
