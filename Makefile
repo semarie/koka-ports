@@ -77,7 +77,7 @@ do-build:
 
 # prebuild koka libraries and install them
 do-install:
-	cd ${WRKBUILD} && ${WRKBUILD}/util_bundle \
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${WRKBUILD}/util_bundle \
 		--install \
 		--prefix=${PREFIX} \
 		--koka=${MODCABAL_BUILT_EXECUTABLE_koka}
