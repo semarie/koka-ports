@@ -52,15 +52,15 @@ NO_TEST =	Yes
 #KK_C_COMPILER =	${KK_C_COMPILER-${MACHINE_ARCH}
 #SUBST_VARS +=		KK_C_COMPILER
 
-# install mimalloc inside kklib
-# remove pre-generated file
 post-extract:
+#	install mimalloc inside kklib
 	test -d ${WRKSRC}/kklib/mimalloc && rmdir ${WRKSRC}/kklib/mimalloc
 	mv ${WRKDIR}/mimalloc-${MIMALLOC_CID} \
 		${WRKSRC}/kklib/mimalloc
 	cd ${WRKSRC}/kklib && rm -rf -- \
 		mimalloc/{bin,cmake,doc,docs,ide,test} \
 		mimalloc/{azure-pipelines.yml,CMakeLists.txt}
+#	remove pre-generated file
 	rm ${WRKSRC}/src/Syntax/Lexer.hs
 
 pre-patch:
