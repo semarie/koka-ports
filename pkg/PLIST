@@ -4,7 +4,7 @@ lib/${MODCABAL_STEM}/
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-debug/
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-debug/kklib.o
-@static-lib lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-debug/libpcre2-8.a
+lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-debug/libpcre2-8.a
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-debug/std_core.c
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-debug/std_core.h
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-debug/std_core.kki
@@ -143,7 +143,7 @@ lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-debug/std_time_utc.kki
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-debug/std_time_utc.o
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-drelease/
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-drelease/kklib.o
-@static-lib lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-drelease/libpcre2-8.a
+lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-drelease/libpcre2-8.a
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-drelease/std_core.c
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-drelease/std_core.h
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-drelease/std_core.kki
@@ -282,7 +282,7 @@ lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-drelease/std_time_utc.kki
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-drelease/std_time_utc.o
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-release/
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-release/kklib.o
-@static-lib lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-release/libpcre2-8.a
+lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-release/libpcre2-8.a
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-release/std_core.c
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-release/std_core.h
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/clang-release/std_core.kki

@@ -28,6 +28,9 @@ LIB_DEPENDS +=		converters/libiconv \
 			devel/gmp,-main \
 			devel/libffi
 
+BUILD_DEPENDS +=	devel/pcre2
+RUN_DEPENDS +=		devel/pcre2
+
 MODULES +=		devel/cabal
 MODCABAL_STEM =		koka
 MODCABAL_VERSION =	${V}
@@ -75,12 +78,17 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${MODCABAL_BUILT_EXECUTABLE_koka} \
 			${WRKSRC}/util/bundle.kk -o ${WRKBUILD}/util_bundle
 
-# prebuild koka libraries and install them
 do-install:
+#	prebuild koka libraries and install them
 	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${WRKBUILD}/util_bundle \
 		--install \
 		--prefix=${PREFIX} \
 		--koka=${MODCABAL_BUILT_EXECUTABLE_koka}
+#	patched files cleanup
 	find ${PREFIX} -type f -name '*${PATCHORIG}' -delete
+#	replace libpcre2-8.a by link to devel/pcre2
+	ln -fs ${LOCALBASE}/lib/libpcre2-8.a ${PREFIX}/lib/koka/v${V}/clang-debug
+	ln -fs ${LOCALBASE}/lib/libpcre2-8.a ${PREFIX}/lib/koka/v${V}/clang-drelease
+	ln -fs ${LOCALBASE}/lib/libpcre2-8.a ${PREFIX}/lib/koka/v${V}/clang-release
 
 .include <bsd.port.mk>

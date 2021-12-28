@@ -1,0 +1,15 @@
+$OpenBSD$
+Search pcre2-8 in systemlibs only (avoid free warnings about conan or vcpkg not installed)
+
+Index: lib/std/text/regex.kk
+--- lib/std/text/regex.kk.orig
++++ lib/std/text/regex.kk
+@@ -16,7 +16,7 @@ module std/text/regex
+ import std/num/int32
+ 
+ extern import {
+-  c { conan="pcre2/[ >= 10.37]"; vcpkg="pcre2"; library="pcre2-8" }
++  c { library="pcre2-8" }
+ }
+ 
+ extern import {
