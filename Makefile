@@ -72,7 +72,7 @@ post-patch:
 # build the compiler (koka) and bundle tool
 do-build:
 #	build koka
-	${_MODCABAL_BUILD_TARGET}
+	${MODCABAL_BUILD_TARGET}
 #	run koka, to build util_bundle
 	cd ${WRKBUILD} && \
 		${SETENV} ${MAKE_ENV} ${MODCABAL_BUILT_EXECUTABLE_koka} \
