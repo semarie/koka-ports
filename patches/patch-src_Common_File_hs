@@ -4,7 +4,7 @@ Use install path instead of wrongly guess executable path.
 Index: src/Common/File.hs
 --- src/Common/File.hs.orig
 +++ src/Common/File.hs
-@@ -351,7 +351,12 @@ removeFileIfExists fname 
+@@ -381,7 +381,12 @@ removeFileIfExists fname 
                (\exn -> return ())
  
  getProgramPath :: IO FilePath

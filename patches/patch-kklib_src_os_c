@@ -1,19 +1,9 @@
 $OpenBSD$
-- Correct a bug in kk_os_ensure_dir() - https://github.com/koka-lang/koka/commit/0903ef39485770f84d9bfc232a0dad3bf7e56366
 - Don't display #pragma for OpenBSD.
 
 Index: kklib/src/os.c
 --- kklib/src/os.c.orig
 +++ kklib/src/os.c
-@@ -305,7 +305,7 @@ kk_decl_export int kk_os_ensure_dir(kk_string_t path, 
-         char c = (char)(*p);
-         if ((c == 0 && p != cpath) || c == '/' || c == '\\') {
-           *p = 0;
--          if (!kk_is_dir(cpath)) {
-+          if (p > cpath && !kk_is_dir(cpath)) {
-             #if defined(WIN32)
-             int res = _wmkdir(cpath);
-             #else 
 @@ -990,7 +990,7 @@ kk_string_t kk_os_app_path(kk_context_t* ctx) {
  }
  

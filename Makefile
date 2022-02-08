@@ -3,9 +3,9 @@
 COMMENT =	strongly typed functional-style language with effect types
 
 DISTNAME =	koka-${V}
-V =		2.3.8
+V =		2.4.0
 
-MIMALLOC_CID =	43ed8510065514a959852d95000f8ab08b535ceb
+MIMALLOC_CID =	f2b6938d64d555f2053612da2e84fcb128bd9116
 
 CATEGORIES =	lang
 
@@ -77,6 +77,7 @@ do-build:
 	cd ${WRKBUILD} && \
 		${SETENV} ${MAKE_ENV} ${MODCABAL_BUILT_EXECUTABLE_koka} \
 			${WRKSRC}/util/bundle.kk -o ${WRKBUILD}/util_bundle
+	chmod u+x ${WRKBUILD}/util_bundle
 
 do-install:
 #	prebuild koka libraries and install them
