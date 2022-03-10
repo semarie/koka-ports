@@ -1,4 +1,3 @@
-$OpenBSD$
 - Don't display #pragma for OpenBSD.
 
 Index: kklib/src/os.c

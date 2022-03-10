@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT =	strongly typed functional-style language with effect types
 
 DISTNAME =	koka-${V}

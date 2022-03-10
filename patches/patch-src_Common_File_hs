@@ -1,4 +1,3 @@
-$OpenBSD$
 Use install path instead of wrongly guess executable path.
 
 Index: src/Common/File.hs

@@ -1,4 +1,3 @@
-$OpenBSD$
 Search pcre2-8 in systemlibs only (avoid free warnings about conan or vcpkg not installed)
 
 Index: lib/std/text/regex.kk

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v$
 @bin bin/${MODCABAL_STEM}
 lib/${MODCABAL_STEM}/
 lib/${MODCABAL_STEM}/v${MODCABAL_VERSION}/
